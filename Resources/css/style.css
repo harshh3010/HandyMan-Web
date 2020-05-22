@@ -7,7 +7,8 @@
 html {
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
-    color: white;
+    color: black;
+    background-color: rgb(231, 240, 255);
 }
 
 .row {
@@ -21,6 +22,7 @@ header {
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0,100% 0,100% 100%,0 86%);
+    background-attachment: fixed;
 }
 
 .main-nav {
@@ -28,6 +30,7 @@ header {
 }
 
 .main-nav p {
+    color: white;
     display: inline-block;
     font-size: 150%;
     vertical-align: middle;
@@ -62,8 +65,11 @@ header {
 }
 
 h1 {
+    color: white;
     width: fit-content;
-    margin: 150px auto;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 400%;
     user-select: none;
     font-weight: 300;
@@ -74,4 +80,185 @@ h1 span {
     font-size: 50%;
 }
 
+.btn-box {
+    width: fit-content;
+    margin: 25px auto;
+}
 
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 40px;
+    border: solid 2px white;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    margin: 15px;
+    color: white;
+}
+
+.btn:hover,
+.btn:active {
+    color: blue;
+    background-color: white;
+    transition: color 0.3s , background-color 0.3s;
+}
+
+.section-about-us {
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(1, 49, 182);
+    font-size: 250%;
+    font-weight: 300;
+    margin-top: 25px;
+    user-select: none;
+}
+
+h2::after {
+    display: block;
+    content: "";
+    background-color: rgb(1, 49, 182) ;
+    height: 2px;
+    width: 8%;
+    margin: 5px auto;
+}
+
+.primary-text {
+    color: rgb(95, 95, 95);
+    margin-top: 50px;
+    text-align: center;
+    line-height: 145%;
+    word-spacing: 4px;
+    font-size: 90%;
+}
+
+.secondary-text {
+    color: rgb(95, 95, 95);
+    margin-top: 20px;
+    text-align: center;
+    line-height: 145%;
+    word-spacing: 4px;
+    font-size: 90%;
+    margin-bottom: 60px;
+}
+
+.section-review {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 52, 148, 0.6),rgba(0, 52, 148, 0.6)),url(img/background2.jpg);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0,100% 14%,100% 86%,0 100%);
+    background-attachment: fixed;
+    z-index: -1;
+    padding-bottom: 80px;
+}
+
+.section-review h2 {
+    color: white;
+    padding-top: 100px;
+}
+
+.section-review h2::after {
+    background-color: white;
+}
+
+.form-box {
+    margin-top: 50px;
+}
+
+label{
+    padding: 10px;
+    font-size: 100%;
+    color: white;
+    float: right;
+    margin-right: 25px;
+}
+
+input[type="text"], 
+textarea {
+    background: inherit;
+    width: 75%;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px white;
+    padding: 5px;
+    color : white;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+
+input[type="text"]::placeholder, 
+textarea::placeholder{
+    color: white;
+    opacity: 0.5;
+}
+
+input[type="submit"]{
+    padding: 8px 40px;
+    font-size: 100%;
+    font-family: inherit;
+    color: white;
+    background: inherit;
+    border: solid 2px white;
+    border-radius: 10px;
+    margin-left: 25%;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+input[type="submit"]:hover{
+    background-color: white;
+    color: blue;
+    transition: color 0.2s , background-color 0.2s;
+}
+
+footer{
+    width: 100;
+    height: 15vh;
+}
+
+footer::before{
+   display: block;
+   width: 10%;
+   content: "";
+   height: 2px;
+   background-color: rgb(145, 145, 145);
+   margin : 5px auto;
+}
+
+footer p {
+    font-size: 70%;
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(145, 145, 145);
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.social-links li {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    color: rgb(145, 145, 145);
+    font-size: 65%;
+}
+
+.social-links li a:hover,
+.social-links li a:active{
+    color: rgb(78, 78, 78);
+    transition: color 0.2s;
+}
