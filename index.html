@@ -28,13 +28,27 @@
             </div>
         </div>
     </header>
-    <div class="popup">
+    <div class="popup-login">
         <div class="login-box">
             <h2>Login</h2>
             <input type="email" name="email" id="email" placeholder="Enter you email" required>
             <input type="password" name="password" id="password" placeholder="Enter you password" required>
             <a href="#" class="login-btn">Login</a>
             <p id="login-close-btn">x</p>
+        </div>
+    </div>
+    <div class="popup-signup">
+        <div class="signup-box">
+            <h2>Sign Up</h2>
+            <input type="text" name="name" id="name" placeholder="Enter you name" required>
+            <input type="email" name="email" id="email" placeholder="Enter you email" required>
+            <input type="text" name="address" id="address" placeholder="Enter you address" required>
+            <input type="number" name="pincode" id="pincode" placeholder="Enter pincode" required>
+            <input type="number" name="contact" id="contact" placeholder="Enter phone number" required>
+            <input type="password" name="password" id="password" placeholder="Create a password" required>
+            <input type="password" name="cnfpassword" id="cnfpassword" placeholder="Confirm password" required>
+            <a href="#" class="signup-btn">Register</a>
+            <p id="signup-close-btn">x</p>
         </div>
     </div>
     <section class="section-about-us">
@@ -104,12 +118,22 @@
 
     <script>
         document.getElementById("btn-login-open").addEventListener("click", function() {
-            document.querySelector(".popup").style.display = "flex";
+            document.querySelector(".popup-login").style.display = "flex";
             document.querySelector("body").style.overflow = "hidden";
         });
 
         document.getElementById("login-close-btn").addEventListener("click", function() {
-            document.querySelector(".popup").style.display = "none";
+            document.querySelector(".popup-login").style.display = "none";
+            document.querySelector("body").style.overflow = "scroll";
+        });
+
+        document.getElementById("btn-signup-open").addEventListener("click", function() {
+            document.querySelector(".popup-signup").style.display = "flex";
+            document.querySelector("body").style.overflow = "hidden";
+        });
+
+        document.getElementById("signup-close-btn").addEventListener("click", function() {
+            document.querySelector(".popup-signup").style.display = "none";
             document.querySelector("body").style.overflow = "scroll";
         });
     </script>
