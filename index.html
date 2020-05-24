@@ -5,9 +5,7 @@
 <head>
     <title>HandyMan</title>
     <meta charset="utf-8">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Resources/css/grid.css">
     <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
 </head>
@@ -25,26 +23,31 @@
         <h1>Just a click<span>And we will be there for you</span></h1>
         <div class="row">
             <div class="btn-box">
-                <a href="#" class="btn btn-login">Login</a>
-                <a href="#" class="btn btn-signup">Sign Up</a>
+                <a href="#" class="btn btn-login-open" id="btn-login-open">Login</a>
+                <a href="#" class="btn btn-signup-open" id="btn-signup-open">Sign Up</a>
             </div>
         </div>
     </header>
+    <div class="popup">
+        <div class="login-box">
+            <h2>Login</h2>
+            <input type="email" name="email" id="email" placeholder="Enter you email" required>
+            <input type="password" name="password" id="password" placeholder="Enter you password" required>
+            <a href="#" class="login-btn">Login</a>
+            <p id="login-close-btn">x</p>
+        </div>
+    </div>
     <section class="section-about-us">
         <h2>About Us</h2>
         <div class="row primary-text">
             <p>
-                Want your air-conditioner to get repaired in the middle of a hot sunny day? Or is there any emergency
-                like a leaking pipe in your kitchen? If you are unable to rush to a local service provider, we are here
-                to help you out.
+                Want your air-conditioner to get repaired in the middle of a hot sunny day? Or is there any emergency like a leaking pipe in your kitchen? If you are unable to rush to a local service provider, we are here to help you out.
             </p>
         </div>
         <div class="row secondary-text">
             <p>
-                HandyMan is a one-stop solution for needs of people with a busy life in urban areas.
-                We provide our customers with services of all categories ranging from electrician, plumbers, carpenters,
-                etc.
-                We'll provide you with the best and fastest services at your convenience. So, do not forget to register.
+                HandyMan is a one-stop solution for needs of people with a busy life in urban areas. We provide our customers with services of all categories ranging from electrician, plumbers, carpenters, etc. We'll provide you with the best and fastest services at
+                your convenience. So, do not forget to register.
             </p>
         </div>
     </section>
@@ -87,8 +90,7 @@
     <footer>
         <div class="row footer-text">
             <p>
-                This website was created for the project HandyMan by Harsh Gyanchandani (Currently pursuing B.Tech in
-                Information Technology at Motilal Nehru National Institute Of Technology, Allahabad/Prayagraj, U.P)
+                This website was created for the project HandyMan by Harsh Gyanchandani (Currently pursuing B.Tech in Information Technology at Motilal Nehru National Institute Of Technology, Allahabad/Prayagraj, U.P)
             </p>
         </div>
         <div class="row">
@@ -99,6 +101,24 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        document.getElementById("btn-login-open").addEventListener("click", function() {
+            document.querySelector(".popup").style.display = "flex";
+            document.querySelector("body").style.overflow = "hidden";
+        });
+
+        document.getElementById("login-close-btn").addEventListener("click", function() {
+            document.querySelector(".popup").style.display = "none";
+            document.querySelector("body").style.overflow = "scroll";
+        });
+    </script>
+
+    <script src="Resources/js/rellax.min.js"></script>
+    <script type="text/javascript">
+        var rellax = new rellax('.rellax');
+    </script>
+
 </body>
 
 </html>

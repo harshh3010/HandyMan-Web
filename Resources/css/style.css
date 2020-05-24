@@ -17,11 +17,11 @@ html {
 }
 
 header {
-    background-image: linear-gradient(rgba(0, 23, 65, 0.6),rgba(0, 89, 255, 0.6)) , url(img/home.jpg) ;
+    background-image: linear-gradient(rgba(0, 23, 65, 0.6), rgba(0, 89, 255, 0.6)), url(img/home.jpg);
     height: 85vh;
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0,100% 0,100% 100%,0 86%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
     background-attachment: fixed;
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .main-nav-links li a:link,
-.main-nav-links li a:visited{
+.main-nav-links li a:visited {
     font-size: 100%;
     text-decoration: none;
     text-transform: uppercase;
@@ -58,7 +58,7 @@ header {
 }
 
 .main-nav-links li a:hover,
-.main-nav-links li a:active{
+.main-nav-links li a:active {
     border-bottom: solid 2px rgb(71, 157, 255);
     color: rgb(71, 157, 255);
     transition: border-bottom 0.2s, color 0.2s;
@@ -102,7 +102,80 @@ h1 span {
 .btn:active {
     color: blue;
     background-color: white;
-    transition: color 0.3s , background-color 0.3s;
+    transform: scale(1.1);
+    transition: color 0.2s, background-color 0.2s, transform 0.2s;
+}
+
+.popup {
+    background: rgba(0, 0, 0, 0.75);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.login-box {
+    height: fit-content;
+    width: 60%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.507);
+    position: relative;
+}
+
+.login-box h2 {
+    font-size: 200%;
+    padding-bottom: 15px;
+}
+
+.login-box input {
+    display: block;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20px;
+    border: none;
+    font-size: 90%;
+    font-family: inherit;
+    border-bottom: solid 2px blue;
+    padding: 5px;
+    outline: none;
+}
+
+.login-box a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 10px 40px;
+    color: white;
+    background: blue;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.login-box p {
+    width: fit-content;
+    color: blue;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    user-select: none;
+}
+
+.login-box p:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+.login-box a:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
 }
 
 .section-about-us {
@@ -121,7 +194,7 @@ h2 {
 h2::after {
     display: block;
     content: "";
-    background-color: rgb(1, 49, 182) ;
+    background-color: rgb(1, 49, 182);
     height: 2px;
     width: 8%;
     margin: 5px auto;
@@ -148,12 +221,11 @@ h2::after {
 
 .section-review {
     width: 100%;
-    background-image: linear-gradient(rgba(0, 52, 148, 0.6),rgba(0, 52, 148, 0.6)),url(img/background2.jpg);
+    background-image: linear-gradient(rgba(0, 52, 148, 0.6), rgba(0, 52, 148, 0.6)), url(img/background2.jpg);
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0 0,100% 14%,100% 86%,0 100%);
+    clip-path: polygon(0 0, 100% 14%, 100% 86%, 0 100%);
     background-attachment: fixed;
-    z-index: -1;
     padding-bottom: 80px;
 }
 
@@ -170,7 +242,7 @@ h2::after {
     margin-top: 50px;
 }
 
-label{
+label {
     padding: 10px;
     font-size: 100%;
     color: white;
@@ -178,7 +250,7 @@ label{
     margin-right: 25px;
 }
 
-input[type="text"], 
+input[type="text"],
 textarea {
     background: inherit;
     width: 75%;
@@ -186,19 +258,18 @@ textarea {
     outline: none;
     border-bottom: solid 1px white;
     padding: 5px;
-    color : white;
+    color: white;
     font-family: inherit;
     font-size: 100%;
 }
 
-
-input[type="text"]::placeholder, 
-textarea::placeholder{
+input[type="text"]::placeholder,
+textarea::placeholder {
     color: white;
     opacity: 0.5;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     padding: 8px 40px;
     font-size: 100%;
     font-family: inherit;
@@ -211,24 +282,24 @@ input[type="submit"]{
     margin-bottom: 25px;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background-color: white;
     color: blue;
-    transition: color 0.2s , background-color 0.2s;
+    transition: color 0.2s, background-color 0.2s;
 }
 
-footer{
+footer {
     width: 100%;
     height: 15vh;
 }
 
-footer::before{
-   display: block;
-   width: 10%;
-   content: "";
-   height: 2px;
-   background-color: rgb(145, 145, 145);
-   margin : 5px auto;
+footer::before {
+    display: block;
+    width: 10%;
+    content: "";
+    height: 2px;
+    background-color: rgb(145, 145, 145);
+    margin: 5px auto;
 }
 
 footer p {
@@ -256,14 +327,14 @@ footer p {
 }
 
 .social-links li a:link,
-.social-links li a:visited{
+.social-links li a:visited {
     text-decoration: none;
     color: rgb(145, 145, 145);
     font-size: 65%;
 }
 
 .social-links li a:hover,
-.social-links li a:active{
+.social-links li a:active {
     color: rgb(78, 78, 78);
     transition: color 0.2s;
 }
