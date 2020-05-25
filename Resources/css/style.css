@@ -18,7 +18,7 @@ html {
 
 header {
     background-image: linear-gradient(rgba(0, 23, 65, 0.6), rgba(0, 89, 255, 0.6)), url(img/home.jpg);
-    height: 85vh;
+    height: fit-content;
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 86%);
@@ -83,6 +83,7 @@ h1 span {
 .btn-box {
     width: fit-content;
     margin: 25px auto;
+    margin-bottom: 120px;
 }
 
 .btn:link,

@@ -8,6 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Resources/css/grid.css">
     <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="Resources/script/script.js"></script>
+
 </head>
 
 <body>
@@ -31,8 +37,8 @@
     <div class="popup-login">
         <div class="login-box">
             <h2>Login</h2>
-            <input type="email" name="email" id="email" placeholder="Enter you email" required>
-            <input type="password" name="password" id="password" placeholder="Enter you password" required>
+            <input type="email" name="email" id="login-email" placeholder="Enter you email" required>
+            <input type="password" name="password" id="login-password" placeholder="Enter you password" required>
             <a href="#" class="login-btn">Login</a>
             <p id="login-close-btn">x</p>
         </div>
@@ -40,14 +46,14 @@
     <div class="popup-signup">
         <div class="signup-box">
             <h2>Sign Up</h2>
-            <input type="text" name="name" id="name" placeholder="Enter you name" required>
-            <input type="email" name="email" id="email" placeholder="Enter you email" required>
-            <input type="text" name="address" id="address" placeholder="Enter you address" required>
-            <input type="number" name="pincode" id="pincode" placeholder="Enter pincode" required>
-            <input type="number" name="contact" id="contact" placeholder="Enter phone number" required>
-            <input type="password" name="password" id="password" placeholder="Create a password" required>
-            <input type="password" name="cnfpassword" id="cnfpassword" placeholder="Confirm password" required>
-            <a href="#" class="signup-btn">Register</a>
+            <input type="text" name="name" id="signup-name" placeholder="Enter you name" required>
+            <input type="email" name="email" id="signup-email" placeholder="Enter you email" required>
+            <input type="text" name="address" id="signup-address" placeholder="Enter you address" required>
+            <input type="number" name="pincode" id="signup-pincode" placeholder="Enter pincode" required>
+            <input type="number" name="contact" id="signup-contact" placeholder="Enter phone number" required>
+            <input type="password" name="password" id="signup-password" placeholder="Create a password" required>
+            <input type="password" name="cnfpassword" id="signup-cnfpassword" placeholder="Confirm password" required>
+            <a onclick="signUp()" class="signup-btn">Register</a>
             <p id="signup-close-btn">x</p>
         </div>
     </div>
@@ -136,11 +142,6 @@
             document.querySelector(".popup-signup").style.display = "none";
             document.querySelector("body").style.overflow = "scroll";
         });
-    </script>
-
-    <script src="Resources/js/rellax.min.js"></script>
-    <script type="text/javascript">
-        var rellax = new rellax('.rellax');
     </script>
 
 </body>
