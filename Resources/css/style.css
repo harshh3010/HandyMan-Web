@@ -108,19 +108,22 @@ h1 span {
 }
 
 .popup-login,
-.popup-signup {
+.popup-signup,
+.profile-edit-popup {
     background: rgba(4, 1, 31, 0.795);
     height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     justify-content: center;
     align-items: center;
     display: none;
 }
 
 .login-box,
-.signup-box {
+.signup-box,
+.profile-edit-box {
     height: fit-content;
     width: 60%;
     background: white;
@@ -130,13 +133,15 @@ h1 span {
 }
 
 .login-box h2,
-.signup-box h2 {
+.signup-box h2,
+.profile-edit-box h2 {
     font-size: 200%;
     padding-bottom: 15px;
 }
 
 .login-box input,
-.signup-box input {
+.signup-box input,
+.profile-edit-box input {
     display: block;
     width: 70%;
     margin-left: 15%;
@@ -150,7 +155,8 @@ h1 span {
 }
 
 .login-box a,
-.signup-box a {
+.signup-box a,
+.profile-edit-box a {
     text-decoration: none;
     display: block;
     width: fit-content;
@@ -161,10 +167,13 @@ h1 span {
     border-radius: 10px;
     margin-bottom: 50px;
     box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    user-select: none;
 }
 
 .login-box p,
-.signup-box p {
+.signup-box p,
+.profile-edit-box p {
     width: fit-content;
     color: blue;
     position: absolute;
@@ -176,13 +185,15 @@ h1 span {
 }
 
 .login-box p:hover,
-.signup-box p:hover {
+.signup-box p:hover,
+.profile-edit-popup p:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
 }
 
 .login-box a:hover,
-.signup-box a:hover {
+.signup-box a:hover,
+.profile-edit-popup a:hover {
     transform: scale(1.05);
     transition: transform 0.2s;
 }
@@ -251,7 +262,7 @@ h2::after {
     margin-top: 50px;
 }
 
-label {
+.form-box label {
     padding: 10px;
     font-size: 100%;
     color: white;
@@ -397,4 +408,56 @@ footer p {
     border-bottom: solid 2px rgb(71, 157, 255);
     color: rgb(71, 157, 255);
     transition: border-bottom 0.2s, color 0.2s;
+}
+
+.handyman-profile label {
+    display: block;
+    color: white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#label-name {
+    margin-top: 50px;
+    font-size: 180%;
+}
+
+#label-address {
+    margin-top: 50px;
+}
+
+#profile-make-changes,
+#profile-logout {
+    display: block;
+    background: white;
+    border: none;
+    font-family: inherit;
+    font-size: 70%;
+    padding: 5px 30px;
+    border-radius: 10px;
+    color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
+    outline: none;
+}
+
+#profile-make-changes:hover {
+    transform: scale(1.1);
+}
+
+#profile-logout {
+    margin: 15px auto;
+}
+
+#profile-logout:hover {
+    transform: scale(1.1);
+}
+
+.profile-edit-box h2 {
+    color: blue;
 }

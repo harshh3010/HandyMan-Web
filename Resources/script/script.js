@@ -62,14 +62,14 @@ function signIn() {
     var email = document.getElementById('login-email');
     var pass = document.getElementById('login-password');
 
-    auth.signInWithEmailAndPassword(email, password).then(function() {
-        alert('Login clicked');
+    auth.signInWithEmailAndPassword(email.value, pass.value).then(function() {
+        window.location.href = "main.html";
     }).catch(e => alert(e.message));
 }
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        alert('Signed in as ' + user.email);
+        window.location.href = 'main.html';
     } else {
         alert('Not Signed In');
     }

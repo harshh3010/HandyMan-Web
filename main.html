@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="Resources/css/grid.css">
     <link rel="stylesheet" type="text/css" href="Resources/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
 </head>
 
 <body>
@@ -27,8 +31,38 @@
         </div>
         <div class="row handyman-profile">
             <h2>Profile</h2>
+            <label id="label-name">Name</label>
+            <label id="label-email">abc123@example.com</label>
+            <label id="label-address">Address: address</label>
+            <label id="label-pincode">Pincode: 123456</label>
+            <label id="label-contact">Contact: 1234567890</label>
+            <button id="profile-make-changes">Make Changes</button>
+            <button onclick="signOut()" id="profile-logout">Logout</button>
+            <div class="profile-edit-popup">
+                <div class="profile-edit-box">
+                    <h2>Edit Info</h2>
+                    <input type="text" name="address" id="edit-address" placeholder="Enter your address" required>
+                    <input type="number" name="pincode" id="edit-pincode" placeholder="Enter pincode" required>
+                    <input type="number" name="contact" id="edit-contact" placeholder="Enter phone number" required>
+                    <a onclick="" class="save-changes-btn">Save Changes</a>
+                    <p id="edit-close-btn">x</p>
+                </div>
+            </div>
         </div>
     </section>
+
+    <script src="Resources/script/login.js"></script>
+
+    <script>
+        document.getElementById("profile-make-changes").addEventListener("click", function() {
+            document.querySelector(".profile-edit-popup").style.display = "flex";
+        });
+
+        document.getElementById("edit-close-btn").addEventListener("click", function() {
+            document.querySelector(".profile-edit-popup").style.display = "none";
+        });
+    </script>
+
 </body>
 
 </html>
