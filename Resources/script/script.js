@@ -56,5 +56,21 @@ function afterSignUp() {
         console.error("Error writing document: ", error);
         alert(error);
     });
-
 }
+
+function signIn() {
+    var email = document.getElementById('login-email');
+    var pass = document.getElementById('login-password');
+
+    auth.signInWithEmailAndPassword(email, password).then(function() {
+        alert('Login clicked');
+    }).catch(e => alert(e.message));
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        alert('Signed in as ' + user.email);
+    } else {
+        alert('Not Signed In');
+    }
+});
