@@ -12,7 +12,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
-    <script src="Resources/script/script.js"></script>
 
 </head>
 
@@ -39,7 +38,7 @@
             <h2>Login</h2>
             <input type="email" name="email" id="login-email" placeholder="Enter you email" required>
             <input type="password" name="password" id="login-password" placeholder="Enter you password" required>
-            <a href="#" class="login-btn">Login</a>
+            <a onclick="signIn()" class="login-btn">Login</a>
             <p id="login-close-btn">x</p>
         </div>
     </div>
@@ -121,6 +120,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="Resources/script/script.js"></script>
 
     <script>
         document.getElementById("btn-login-open").addEventListener("click", function() {

@@ -348,3 +348,53 @@ footer p {
     color: rgb(78, 78, 78);
     transition: color 0.2s;
 }
+
+
+/*----------------------------main.html---------------------------*/
+
+.section-main {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(2, 0, 112, 0.8), rgba(2, 0, 133, 0.664)), url(img/home.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+.section-main h2 {
+    color: white;
+}
+
+.section-main h2::after {
+    background-color: white;
+}
+
+.handyman-nav {
+    height: fit-content;
+}
+
+.handyman-nav-list {
+    list-style: none;
+    float: right;
+}
+
+.handyman-nav-list li {
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+.handyman-nav-list li a:link,
+.handyman-nav-list a:visited {
+    font-size: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    vertical-align: middle;
+    border-bottom: solid 2px transparent;
+}
+
+.handyman-nav-list li a:hover,
+.handyman-nav-list li a:active {
+    border-bottom: solid 2px rgb(71, 157, 255);
+    color: rgb(71, 157, 255);
+    transition: border-bottom 0.2s, color 0.2s;
+}
