@@ -72,6 +72,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         var id = auth.currentUser.uid;
         db.collection("Users").doc(id).get().then(function(doc) {
             if (doc.exists) {
+                localStorage.setItem("user_id", doc.data().id);
                 localStorage.setItem("user_name", doc.data().name);
                 localStorage.setItem("user_email", doc.data().email);
                 localStorage.setItem("user_address", doc.data().address);
