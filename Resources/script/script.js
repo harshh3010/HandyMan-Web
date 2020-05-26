@@ -63,13 +63,25 @@ function signIn() {
     var pass = document.getElementById('login-password');
 
     auth.signInWithEmailAndPassword(email.value, pass.value).then(function() {
-        window.location.href = "main.html";
+
     }).catch(e => alert(e.message));
 }
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        window.location.href = 'main.html';
+        var id = auth.currentUser.uid;
+        db.collection("Users").doc(id).get().then(function(doc) {
+            if (doc.exists) {
+                localStorage.setItem("user_name", doc.data().name);
+                localStorage.setItem("user_email", doc.data().email);
+                localStorage.setItem("user_address", doc.data().address);
+                localStorage.setItem("user_pincode", doc.data().pincode);
+                localStorage.setItem("user_contact", doc.data().contact);
+                window.location.replace('main.html');
+            } else {
+                alert("Unable to fetch user data!");
+            }
+        });
     } else {
         alert('Not Signed In');
     }

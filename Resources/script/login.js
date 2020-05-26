@@ -9,8 +9,6 @@ var firebaseConfig = {
     measurementId: "G-05H9TCD39M"
 };
 
-const id = null;
-
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
@@ -19,16 +17,15 @@ const db = firebase.firestore();
 
 function signOut() {
     auth.signOut().then(function() {
+        localStorage.clear();
         window.location.href = "index.html";
     }, function(error) {
         alert("An error occured\n" + error);
     });
 }
 
-firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-        id = user.uid;
-    }
-});
-
-document.getElementById('label-name').innerHTML = id;
+document.getElementById('label-name').innerHTML = localStorage.getItem('user_name');
+document.getElementById('label-email').innerHTML = localStorage.getItem('user_email');
+document.getElementById('label-address').innerHTML = "Address: " + localStorage.getItem('user_address');
+document.getElementById('label-pincode').innerHTML = "Pincode: " + localStorage.getItem('user_pincode');
+document.getElementById('label-contact').innerHTML = "Contact: " + localStorage.getItem('user_contact');
