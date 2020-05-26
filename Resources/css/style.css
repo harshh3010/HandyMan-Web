@@ -461,3 +461,54 @@ footer p {
 .profile-edit-box h2 {
     color: blue;
 }
+
+.handyman-bookings h2 {
+    margin-bottom: 50px;
+}
+
+.booking-div {
+    background-color: white;
+    width: 60%;
+    height: fit-content;
+    margin-left: 20%;
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s;
+}
+
+.booking-div:hover {
+    transform: scale(1.04);
+}
+
+.booking-div label {
+    font-size: 100%;
+    display: block;
+    color: blue;
+}
+
+#booking-service-cost {
+    margin-top: 5px;
+    font-size: 70%;
+}
+
+#booking-cancel-btn {
+    display: block;
+    background: blue;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 70%;
+    font-family: inherit;
+    padding: 5px 30px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-top: 5px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+#booking-cancel-btn:hover {
+    transform: scale(1.1);
+}
