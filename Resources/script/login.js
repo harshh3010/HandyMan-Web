@@ -56,3 +56,9 @@ function updateData() {
         alert(error);
     });
 }
+
+db.collection('Cities').get().then(snapshot => {
+    snapshot.docs.forEach(doc => {
+        document.getElementById('list-cities').innerHTML += "<option value = " + doc.id + " selected>" + doc.id + "</option>";
+    });
+});
