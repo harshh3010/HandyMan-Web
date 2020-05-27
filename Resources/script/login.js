@@ -59,6 +59,19 @@ function updateData() {
 
 db.collection('Cities').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        document.getElementById('list-cities').innerHTML += "<option value = " + doc.id + " selected>" + doc.id + "</option>";
+        document.getElementById('list-cities').innerHTML += "<option value = " + doc.id + ">" + doc.id + "</option>";
     });
 });
+
+function loadCategories() {
+    var cities = document.getElementById('list-cities');
+    var city = cities.options[cities.selectedIndex].value;
+
+    document.getElementById('service-category-box').innerHTML = "";
+
+    db.collection('Cities').doc(city).collection('Services').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            document.getElementById('service-category-box').innerHTML += "<div class=\"service-category\"><label>" + doc.id + "</label></div>";
+        });
+    });
+}
