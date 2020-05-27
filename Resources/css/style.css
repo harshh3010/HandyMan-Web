@@ -389,7 +389,7 @@ footer p {
     float: right;
 }
 
-.handyman-nav-list li {
+.nav-item {
     display: inline-block;
     padding: 10px 5px;
     margin-left: 50px;
@@ -400,12 +400,20 @@ footer p {
     vertical-align: middle;
     border-bottom: solid 2px transparent;
     user-select: none;
+    transition: border-bottom 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
 }
 
-.handyman-nav-list li:hover {
+.nav-item-selected {
     border-bottom: solid 2px rgb(71, 157, 255);
     color: rgb(71, 157, 255);
-    transition: border-bottom 0.2s, color 0.2s;
+    transform: scale(1);
+}
+
+.nav-item:hover {
+    border-bottom: solid 2px rgb(71, 157, 255);
+    color: rgb(71, 157, 255);
+    transform: scale(1.1);
 }
 
 .handyman-home {

@@ -18,9 +18,9 @@
     <section class="section-main">
         <div class="row handyman-nav">
             <ul class="handyman-nav-list">
-                <li id="nav-to-home">Home</li>
-                <li id="nav-to-bookings">My Bookings</li>
-                <li id="nav-to-profile">My Profile</li>
+                <li class="nav-item nav-item-selected" id="nav-to-home">Home</li>
+                <li class="nav-item" id="nav-to-bookings">My Bookings</li>
+                <li class="nav-item" id="nav-to-profile">My Profile</li>
             </ul>
         </div>
         <div class="row handyman-home">
@@ -80,18 +80,27 @@
             document.querySelector(".handyman-home").style.display = "block";
             document.querySelector(".handyman-bookings").style.display = "none";
             document.querySelector(".handyman-profile").style.display = "none";
+            document.getElementById("nav-to-home").classList.add("nav-item-selected");
+            document.getElementById("nav-to-bookings").classList.remove("nav-item-selected");
+            document.getElementById("nav-to-profile").classList.remove("nav-item-selected");
         });
 
         document.getElementById("nav-to-bookings").addEventListener("click", function() {
             document.querySelector(".handyman-home").style.display = "none";
             document.querySelector(".handyman-bookings").style.display = "block";
             document.querySelector(".handyman-profile").style.display = "none";
+            document.getElementById("nav-to-bookings").classList.add("nav-item-selected");
+            document.getElementById("nav-to-home").classList.remove("nav-item-selected");
+            document.getElementById("nav-to-profile").classList.remove("nav-item-selected");
         });
 
         document.getElementById("nav-to-profile").addEventListener("click", function() {
             document.querySelector(".handyman-home").style.display = "none";
             document.querySelector(".handyman-bookings").style.display = "none";
             document.querySelector(".handyman-profile").style.display = "block";
+            document.getElementById("nav-to-profile").classList.add("nav-item-selected");
+            document.getElementById("nav-to-bookings").classList.remove("nav-item-selected");
+            document.getElementById("nav-to-home").classList.remove("nav-item-selected");
         });
     </script>
 
