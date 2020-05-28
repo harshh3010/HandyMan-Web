@@ -30,20 +30,36 @@
                     <label>Select a city:</label>
                 </div>
                 <div class="col span-2-of-3">
-                    <select name="select-city" id="list-cities">
+                    <select name="select-city" id="list-cities" onchange="loadCategories();">
+                        <option value = "select-city">Please select a city</option>
                     </select>
                 </div>
             </div>
-            <div class="row service-category-box">
-                <div class="service-category">
+            <div class="row service-category-box" id="service-category-box">
+                <!--HTML code will be added here upon loading of data
+
+                    <div class="service-category">
                     <label>Category Name</label>
-                </div>
-                <div class="service-category">
-                    <label>Category Name</label>
-                </div>
-                <div class="service-category">
-                    <label>Category Name</label>
-                </div>
+                    </div>
+
+                -->
+            </div>
+        </div>
+        <div class=" row handyman-service-category">
+            <h2 id="category-name-h2">
+                <!-- Category name to be displayed here -->
+            </h2>
+            <p id="services-back-btn">Back to categories</p>
+            <div class="row service-box" id="service-box">
+                <!-- 
+                    Elements will be added after loading the data 
+                    
+                    <div class="service">
+                    <label id="service-name">Service Name</label>
+                    <label id="service-desc">This is the description of the service.</label>
+                    <label id="service-cost">Rs. 0</label>
+                    </div> 
+                -->
             </div>
         </div>
         <div class="row handyman-bookings">
@@ -112,6 +128,11 @@
             document.getElementById("nav-to-profile").classList.add("nav-item-selected");
             document.getElementById("nav-to-bookings").classList.remove("nav-item-selected");
             document.getElementById("nav-to-home").classList.remove("nav-item-selected");
+        });
+
+        document.getElementById("services-back-btn").addEventListener("click", function() {
+            document.querySelector(".handyman-home").style.display = "block";
+            document.querySelector(".handyman-service-category").style.display = "none";
         });
     </script>
 

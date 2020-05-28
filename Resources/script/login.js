@@ -71,7 +71,29 @@ function loadCategories() {
 
     db.collection('Cities').doc(city).collection('Services').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
-            document.getElementById('service-category-box').innerHTML += "<div class=\"service-category\"><label>" + doc.id + "</label></div>";
+            document.getElementById('service-category-box').innerHTML += "<div class=\"service-category\">" +
+                "<label onclick=\"loadServices(this,\'" + city + "\')\">" + doc.id + "</label>" +
+                "</div>";
+        });
+    });
+}
+
+function loadServices(el, city) {
+    var category = el.textContent;
+
+    document.getElementById("category-name-h2").innerHTML = category;
+    document.getElementById("service-box").innerHTML = "";
+
+    document.querySelector(".handyman-home").style.display = "none";
+    document.querySelector(".handyman-service-category").style.display = "block";
+
+    db.collection("Cities").doc(city).collection("Services").doc(category).collection('Service').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            document.getElementById("service-box").innerHTML += "<div class=\"service\">" +
+                "<label id=\"service-name\">" + doc.id + "</label>" +
+                "<label id=\"service-desc\">" + "No description by now" + "</label>" +
+                "<label id=\"service-cost\">" + "Rs. 10" + "</label>" +
+                "</div>";
         });
     });
 }

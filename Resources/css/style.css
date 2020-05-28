@@ -444,7 +444,8 @@ footer p {
     padding: 0 30px;
 }
 
-.service-category-box {
+.service-category-box,
+.service-box {
     margin-left: 0;
     margin-top: 50px;
     width: 100%;
@@ -461,7 +462,8 @@ footer p {
     margin-bottom: 20px;
 }
 
-.service-category {
+.service-category,
+.service {
     display: inline-block;
     width: 40%;
     background: white;
@@ -472,11 +474,57 @@ footer p {
     transition: transform 0.2s;
 }
 
-.service-category:hover {
+.handyman-service-category {
+    display: none;
+}
+
+.handyman-service-category p {
+    width: fit-content;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    font-size: 70%;
+    transition: transform 0.2s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.handyman-service-category p:hover {
+    transform: scale(1.1);
+}
+
+.service-category:hover,
+.service:hover {
     transform: scale(1.05);
 }
 
 .service-category label {
+    width: 100%;
+    text-align: center;
+    color: blue;
+    float: left;
+    padding: 10px 30px;
+}
+
+#service-name {
+    width: 100%;
+    text-align: center;
+    color: blue;
+    float: left;
+    padding: 10px 30px;
+}
+
+#service-desc {
+    width: 100%;
+    text-align: center;
+    color: black;
+    float: left;
+    font-size: 80%;
+    padding: 2px 30px;
+}
+
+#service-cost {
     width: 100%;
     text-align: center;
     color: blue;
