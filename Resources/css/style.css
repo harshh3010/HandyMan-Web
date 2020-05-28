@@ -606,6 +606,7 @@ footer p {
 }
 
 .booking-div {
+    margin-top: 20px;
     background-color: white;
     width: 60%;
     height: fit-content;
@@ -631,7 +632,7 @@ footer p {
     font-size: 70%;
 }
 
-#booking-cancel-btn {
+.booking-cancel-btn {
     display: block;
     background: blue;
     border: none;
@@ -648,6 +649,6 @@ footer p {
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.6);
 }
 
-#booking-cancel-btn:hover {
+.booking-cancel-btn:hover {
     transform: scale(1.1);
 }

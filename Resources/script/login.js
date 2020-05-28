@@ -26,6 +26,7 @@ function signOut() {
 }
 
 displayData();
+loadBookings();
 
 function displayData() {
     document.getElementById('label-name').innerHTML = localStorage.getItem('user_name');
@@ -127,5 +128,23 @@ function bookService(name, city, category, cost) {
             alert(e.message);
         });
 
+    });
+}
+
+function loadBookings() {
+    db.collection('Users').doc(id).collection("Bookings").get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            document.getElementById('bookings-box').innerHTML += "<div class=\"booking-div\">" +
+                "<label class=\"booking-service-name\">" + doc.data().name + "</label>" +
+                "<label class=\"booking-service-cost\">" + "Rs. " + doc.data().cost + "</label>" +
+                "<button class=\"booking-cancel-btn\" onclick=\"cancelBooking(\'" + doc.id + "\')\">Cancel</button>";
+        });
+    });
+}
+
+function cancelBooking(booking_id) {
+    db.collection("Users").doc(id).collection("Bookings").doc(booking_id).delete().then(function() {
+        alert("Booking cancelled!");
+        location.reload();
     });
 }
