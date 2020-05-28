@@ -122,11 +122,17 @@ function bookService(name, city, category, cost) {
             date: date,
             time: time
         };
-        db.collection("Users").doc(id).collection("Bookings").doc().set(booking).then(function() {
-            alert("Booking confirmed");
-        }).catch(e => {
-            alert(e.message);
-        });
+        if (!date || !time) {
+            alert("Please enter date and time.");
+        } else {
+
+            db.collection("Users").doc(id).collection("Bookings").doc().set(booking).then(function() {
+                alert("Booking confirmed");
+                location.reload();
+            }).catch(e => {
+                alert(e.message);
+            });
+        }
 
     });
 }
@@ -136,6 +142,8 @@ function loadBookings() {
         snapshot.docs.forEach(doc => {
             document.getElementById('bookings-box').innerHTML += "<div class=\"booking-div\">" +
                 "<label class=\"booking-service-name\">" + doc.data().name + "</label>" +
+                "<label class=\"booking-service-date\">" + "Date: " + doc.data().date + "</label>" +
+                "<label class=\"booking-service-time\">" + "Time: " + doc.data().time + "</label>" +
                 "<label class=\"booking-service-cost\">" + "Rs. " + doc.data().cost + "</label>" +
                 "<button class=\"booking-cancel-btn\" onclick=\"cancelBooking(\'" + doc.id + "\')\">Cancel</button>";
         });

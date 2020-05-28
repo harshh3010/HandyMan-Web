@@ -622,8 +622,14 @@ footer p {
 }
 
 .booking-div label {
-    font-size: 100%;
+    font-size: 70%;
     display: block;
+    color: black;
+}
+
+.booking-div .booking-service-name,
+.booking-div .booking-service-cost {
+    font-size: 100%;
     color: blue;
 }
 
