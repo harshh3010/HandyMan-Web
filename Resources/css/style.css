@@ -109,7 +109,8 @@ h1 span {
 
 .popup-login,
 .popup-signup,
-.profile-edit-popup {
+.profile-edit-popup,
+.booking-popup {
     background: rgba(4, 1, 31, 0.795);
     height: 100%;
     width: 100%;
@@ -123,7 +124,8 @@ h1 span {
 
 .login-box,
 .signup-box,
-.profile-edit-box {
+.profile-edit-box,
+.booking-box {
     height: fit-content;
     width: 60%;
     background: white;
@@ -134,14 +136,16 @@ h1 span {
 
 .login-box h2,
 .signup-box h2,
-.profile-edit-box h2 {
+.profile-edit-box h2,
+.booking-box h2 {
     font-size: 200%;
     padding-bottom: 15px;
 }
 
 .login-box input,
 .signup-box input,
-.profile-edit-box input {
+.profile-edit-box input,
+.booking-box input {
     display: block;
     width: 70%;
     margin-left: 15%;
@@ -156,7 +160,8 @@ h1 span {
 
 .login-box a,
 .signup-box a,
-.profile-edit-box a {
+.profile-edit-box a,
+.booking-box a {
     text-decoration: none;
     display: block;
     width: fit-content;
@@ -173,7 +178,8 @@ h1 span {
 
 .login-box p,
 .signup-box p,
-.profile-edit-box p {
+.profile-edit-box p,
+.booking-box p {
     width: fit-content;
     color: blue;
     position: absolute;
@@ -186,14 +192,16 @@ h1 span {
 
 .login-box p:hover,
 .signup-box p:hover,
-.profile-edit-popup p:hover {
+.profile-edit-popup p:hover,
+.booking-box p:hover {
     transform: scale(1.2);
     transition: transform 0.2s;
 }
 
 .login-box a:hover,
 .signup-box a:hover,
-.profile-edit-popup a:hover {
+.profile-edit-popup a:hover,
+.booking-box a:hover {
     transform: scale(1.05);
     transition: transform 0.2s;
 }
@@ -584,7 +592,8 @@ footer p {
     transform: scale(1.1);
 }
 
-.profile-edit-box h2 {
+.profile-edit-box h2,
+.booking-box h2 {
     color: blue;
 }
 

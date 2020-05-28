@@ -85,15 +85,47 @@ function loadServices(el, city) {
     document.getElementById("service-box").innerHTML = "";
 
     document.querySelector(".handyman-home").style.display = "none";
+    document.querySelector(".handyman-bookings").style.display = "none";
+    document.querySelector(".handyman-profile").style.display = "none";
     document.querySelector(".handyman-service-category").style.display = "block";
 
     db.collection("Cities").doc(city).collection("Services").doc(category).collection('Service').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
-            document.getElementById("service-box").innerHTML += "<div class=\"service\">" +
-                "<label id=\"service-name\">" + doc.id + "</label>" +
-                "<label id=\"service-desc\">" + "No description by now" + "</label>" +
-                "<label id=\"service-cost\">" + "Rs. 10" + "</label>" +
+            document.getElementById("service-box").innerHTML += "<div class=\"service\" onclick=\"bookService(" +
+                "\'" + doc.data().name + "\'," +
+                "\'" + city + "\'," +
+                "\'" + category + "\'," +
+                "\'" + doc.data().cost + "\'" +
+                ")\">" +
+                "<label id=\"service-name\">" + doc.data().name + "</label>" +
+                "<label id=\"service-desc\">" + doc.data().desc + "</label>" +
+                "<label id=\"service-cost\">" + "Rs. " + doc.data().cost + "</label>" +
                 "</div>";
         });
+    });
+}
+
+function bookService(name, city, category, cost) {
+
+    document.querySelector(".booking-popup").style.display = "flex";
+
+    document.getElementById('confirm-booking-btn').addEventListener('click', function() {
+
+        var time = document.getElementById('booking-time').value;
+        var date = document.getElementById('booking-date').value;
+        var booking = {
+            name: name,
+            city: city,
+            category: category,
+            cost: cost,
+            date: date,
+            time: time
+        };
+        db.collection("Users").doc(id).collection("Bookings").doc().set(booking).then(function() {
+            alert("Booking confirmed");
+        }).catch(e => {
+            alert(e.message);
+        });
+
     });
 }
